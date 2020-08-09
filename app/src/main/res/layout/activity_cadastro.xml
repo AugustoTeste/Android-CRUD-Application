@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundopreto"
+    tools:context=".CadastroActivity">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/constraintForm"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:maxWidth="500dp"
+    android:padding="10dp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.0">
+    <EditText
+        android:id="@+id/edt_nomeCompleto"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/buttonshape"
+        android:ems="10"
+        android:hint="Nome completo"
+        android:paddingLeft="10dp"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorHint"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <EditText
+        android:id="@+id/edt_cpf"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/buttonshape"
+        android:ems="10"
+        android:hint="CPF"
+        android:paddingLeft="10dp"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorHint"
+        app:layout_constraintTop_toBottomOf="@+id/edt_nomeCompleto"
+        app:layout_constraintVertical_bias="0.0"/>
+
+    <EditText
+        android:id="@+id/edt_endereco"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/buttonshape"
+        android:ems="10"
+        android:hint="Endereço"
+        android:paddingLeft="10dp"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorHint"
+        app:layout_constraintTop_toBottomOf="@+id/edt_cpf"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <EditText
+        android:id="@+id/edt_telefone"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/buttonshape"
+        android:ems="10"
+        android:hint="Telefone"
+        android:paddingLeft="10dp"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorHint"
+        app:layout_constraintTop_toBottomOf="@+id/edt_endereco"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <EditText
+        android:id="@+id/edt_dataNasc"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/buttonshape"
+        android:ems="10"
+        android:hint="Data de nascimento"
+        android:paddingLeft="10dp"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorHint"
+        app:layout_constraintTop_toBottomOf="@+id/edt_telefone"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <EditText
+        android:id="@+id/edt_email"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/buttonshape"
+        android:ems="10"
+        android:hint="Email"
+        android:paddingLeft="10dp"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorHint"
+        app:layout_constraintTop_toBottomOf="@+id/edt_dataNasc"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <EditText
+        android:id="@+id/edt_usuario"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="5dp"
+        android:autofillHints=""
+        android:background="@drawable/buttonshape"
+        android:ems="10"
+        android:hint="Usuário"
+        android:paddingLeft="10dp"
+        android:inputType="textPersonName"
+        android:padding="@dimen/padding_editText"
+        android:textColor="@color/colorHint"
+        app:layout_constraintTop_toBottomOf="@+id/edt_email"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <EditText
+        android:id="@+id/edt_senha"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="5dp"
+        android:autofillHints=""
+        android:background="@drawable/buttonshape"
+        android:ems="10"
+        android:hint="@string/senha"
+        android:paddingLeft="10dp"
+        android:inputType="textPassword"
+        android:padding="@dimen/padding_editText"
+        android:textColor="@color/colorHint"
+        app:layout_constraintTop_toBottomOf="@+id/edt_usuario"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="@string/ok"
+        android:textColor="@color/colorHint"
+        android:backgroundTint="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_senha" />
+
+    <Button
+        android:id="@+id/btn_limpar"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="@string/limpar"
+        android:textColor="@color/colorHint"
+        android:backgroundTint="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ok" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorBottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintForm"
+        app:layout_constraintVertical_bias="1.0">
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar2"
+            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorHint"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/coordinatorBottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/app_bar_menu">
+
+            <ImageView
+                android:id="@+id/btn_home"
+                android:layout_width="85dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_ok"
+                app:srcCompat="@drawable/home" />
+        </com.google.android.material.bottomappbar.BottomAppBar>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

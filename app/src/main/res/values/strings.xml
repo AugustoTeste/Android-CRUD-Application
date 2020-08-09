@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Meu App</string>
+    <string name="limpar">LIMPAR</string>
+    <string name="ok">OK</string>
+    <string name="usuario">Usuário</string>
+    <string name="senha">Senha</string>
+    <string name="globe">Globe</string>
+    <string name="info">Info</string>
+    <string name="settings">Settings</string>
+    <string name="warning">Warning</string>
+    <string name="search">Search</string>
+</resources>
