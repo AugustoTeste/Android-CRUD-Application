@@ -15,7 +15,22 @@
     android:maxWidth="500dp"
     android:padding="10dp"
     app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.0">
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent">
+    <TextView
+        android:id="@+id/novoUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Novo Usuário"
+        android:fontFamily="@font/alfa_slab_one"
+        android:textSize="30sp"
+        android:textColor="@color/colorHint"
+        tools:layout_editor_absoluteX="19dp"
+        tools:layout_editor_absoluteY="74dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <EditText
         android:id="@+id/edt_nomeCompleto"
         android:layout_width="match_parent"
@@ -26,7 +41,7 @@
         android:paddingLeft="10dp"
         android:inputType="textPersonName"
         android:textColor="@color/colorHint"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/novoUsuario"
         app:layout_constraintHorizontal_bias="0.0"/>
 
     <EditText
