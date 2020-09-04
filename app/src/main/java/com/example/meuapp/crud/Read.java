@@ -12,7 +12,7 @@ public class Read {
     public ArrayList<Pessoa> getPessoas() {
 
         SQLiteDatabase db = MainDB.getInstancia().getReadableDatabase();
-        String query = "SELECT * FROM " + MainDB.TABELA_PESSOA;
+        String query = "SELECT * FROM " + MainDB.TABELA_PESSOA + " ORDER BY USUARIO";
         ArrayList<Pessoa> pessoas = new ArrayList<>();
         Cursor c = db.rawQuery(query, null);
 
