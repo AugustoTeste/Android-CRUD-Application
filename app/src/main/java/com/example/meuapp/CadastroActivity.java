@@ -48,18 +48,18 @@ public class CadastroActivity extends AppCompatActivity implements View.OnClickL
         lvPessoas = findViewById(R.id.lvPessoas);
         btn_home = findViewById(R.id.btn_home);
 
-        findViewById(R.id.btn_ok).setOnClickListener(this);
-        findViewById(R.id.btn_limpar).setOnClickListener(this);
+        findViewById(R.id.btn_salvar).setOnClickListener(this);
+//        findViewById(R.id.btn_limpar).setOnClickListener(this);
         findViewById(R.id.btn_home).setOnClickListener(this);
         new Create().createTable();
     }
     @Override
     public void onClick(View view){
         int id = view.getId();
-        if(id == R.id.btn_ok)
+        if(id == R.id.btn_salvar)
             addPessoa();
-        else if(id == R.id.btn_limpar)
-            limparCampos();
+//        else if(id == R.id.btn_limpar)
+//            limparCampos();
         else if(id == R.id.btn_home)
             _home();
     }
@@ -83,7 +83,6 @@ public class CadastroActivity extends AppCompatActivity implements View.OnClickL
             Toast.makeText(this, "Erro ao inserir pessoa", Toast.LENGTH_SHORT).show();
         }
     }
-
 
     public void limparCampos(){
         edt_nomeCompleto.setText("");

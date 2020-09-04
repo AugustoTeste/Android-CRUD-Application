@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">Meu App</string>
     <string name="limpar">LIMPAR</string>
+    <string name="cancelar">CANCELAR</string>
     <string name="ok">OK</string>
+    <string name="salvar">SALVAR</string>
+    <string name="confirmar">CONFIRMAR</string>
     <string name="usuario">Usuário</string>
     <string name="senha">Senha</string>
     <string name="globe">Globe</string>
