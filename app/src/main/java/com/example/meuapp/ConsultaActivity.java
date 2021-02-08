@@ -1,7 +1,9 @@
 package com.example.meuapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,15 +22,17 @@ import com.example.meuapp.crud.Create;
 import com.example.meuapp.crud.Read;
 import com.example.meuapp.model.Pessoa;
 import com.google.android.material.bottomappbar.BottomAppBar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
 public class ConsultaActivity extends AppCompatActivity {
     private ArrayList<Pessoa> listaPessoas;
     private ListView lvPessoas;
-    private ImageView btn_home;
+//    private ImageView btn_home;
     private EditText edt_searchPerson;
     private BottomAppBar btn_search, bottomAppBarHome;
+    private BottomNavigationView bnv;
     private int j = 0;
     private int cont = 0;
 
@@ -39,6 +43,7 @@ public class ConsultaActivity extends AppCompatActivity {
         btn_search = findViewById(R.id.topAppBar);
         edt_searchPerson = findViewById(R.id.edt_searchPerson);
         bottomAppBarHome = findViewById(R.id.bottomAppBar);
+        bnv = findViewById(R.id.bottomNavigationView);
 
         lvPessoas = findViewById(R.id.lvPessoas);
         new Create().createTable();
@@ -51,22 +56,49 @@ public class ConsultaActivity extends AppCompatActivity {
             }
         });
 
-
-
-        bottomAppBarHome.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+//        bottomAppBarHome.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+//            @Override
+//            public boolean onMenuItemClick(MenuItem item) {
+//                switch(item.getItemId()){
+//                    case R.id.btn_home:
+//                        startActivity(new Intent(ConsultaActivity.this, HomeActivity.class));
+//                        return true;
+//                }
+//                return true;
+//            }
+//        });
+        lvPessoas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                switch(item.getItemId()){
-                    case R.id.btn_home:
-                        startActivity(new Intent(ConsultaActivity.this, HomeActivity.class));
-                        return true;
-                }
-                return true;
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getApplicationContext(), "Nome "+i+" selecionado", Toast.LENGTH_SHORT).show();
             }
         });
 
         edt_searchPerson.addTextChangedListener(textWatcher);
+        bnv.setOnNavigationItemSelectedListener(bnvListener);
     }
+    private BottomNavigationView.OnNavigationItemSelectedListener bnvListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+            Fragment selectedFragment = null;
+            switch (menuItem.getItemId()) {
+                case R.id.menuWarning:
+                    Toast.makeText(getApplicationContext(), "Warning is selected!", Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.menuInfo:
+                    Toast.makeText(getApplicationContext(), "Info is selected!", Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.menuGlobe:
+                    Toast.makeText(getApplicationContext(), "Globe is selected!", Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.menuSettings:
+                    Toast.makeText(getApplicationContext(), "Settings is selected!", Toast.LENGTH_SHORT).show();
+                    break;
+            }
+            return true;
+        }
+    };
 
     private TextWatcher textWatcher = new TextWatcher() {
         @Override
@@ -131,11 +163,5 @@ public class ConsultaActivity extends AppCompatActivity {
         );
         lvPessoas.setAdapter(adapter);
 
-        lvPessoas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getApplicationContext(), "Nome "+i+" selecionado", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 }
