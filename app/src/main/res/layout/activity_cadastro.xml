@@ -169,6 +169,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintForm"
         app:layout_constraintVertical_bias="1.0">
+        
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomAppBar2"
             style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
