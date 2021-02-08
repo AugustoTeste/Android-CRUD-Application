@@ -15,9 +15,11 @@
         android:layout_marginStart="50dp"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="100dp"
+        android:contentDescription="@string/create"
+        android:visibility="visible"
+        android:src="@drawable/create"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/create" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <ImageView
         android:id="@+id/btn_pesquisar"
@@ -26,9 +28,10 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
+        android:contentDescription="@string/search"
+        android:src="@drawable/read"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/read" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/btn_atualizar"
@@ -37,9 +40,10 @@
         android:layout_marginStart="50dp"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="50dp"
+        android:contentDescription="@string/update"
+        android:src="@drawable/update"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_add"
-        app:srcCompat="@drawable/update" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_add" />
 
     <ImageView
         android:id="@+id/btn_del"
@@ -48,19 +52,20 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
+        android:contentDescription="@string/delete"
+        android:src="@drawable/delete"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_pesquisar"
-        app:srcCompat="@drawable/delete" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_pesquisar"/>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Operações"
+        android:text="@string/operacoes"
         android:textColor="@color/colorHint"
         android:textSize="36sp"
-        app:fontFamily="@font/alfa_slab_one"
+        app:fontFamily="sans-serif-condensed-light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -91,20 +96,22 @@
             app:navigationIcon="@drawable/ic_menu">
         </com.google.android.material.bottomappbar.BottomAppBar>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawerLayoutProfile"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="invisible"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/navigationViewProfile"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="start"
             app:headerLayout="@layout/header"
-            app:menu="@menu/app_bar_menu">
-        </com.google.android.material.navigation.NavigationView>
+            app:menu="@menu/app_bar_menu"></com.google.android.material.navigation.NavigationView>
+
     </androidx.drawerlayout.widget.DrawerLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
