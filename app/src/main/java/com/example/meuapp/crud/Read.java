@@ -37,4 +37,27 @@ public class Read {
         c.close();
         return pessoas;
     }
+
+    public Pessoa getPessoaById(String usuario) {
+        SQLiteDatabase db = MainDB.getInstancia().getReadableDatabase();
+        String query = "SELECT * FROM " + MainDB.TABELA_PESSOA + " WHERE USUARIO ='" + usuario+"'";
+//        ArrayList<String> pessoas = new ArrayList<>();
+        Cursor c = db.rawQuery(query, null);
+        Pessoa pessoa = new Pessoa();
+
+        if(c.moveToFirst()) {
+            do {
+                pessoa.setNomeCompleto(c.getString(1));
+                pessoa.setCpf(c.getString(2));
+                pessoa.setEndereco(c.getString(3));
+                pessoa.setDataNasc(c.getString(4));
+                pessoa.setTelefone(c.getString(5));
+                pessoa.setEmail(c.getString(8));
+                pessoa.setUsuario(c.getString(9));
+                pessoa.setSenha(c.getString(10));
+            }while(c.moveToNext());
+        }
+        return pessoa;
+    }
+
 }
