@@ -2,4 +2,5 @@
 <resources>
     <dimen name="padding_editText">5dp</dimen>
     <dimen name="padding_layout">10dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>
